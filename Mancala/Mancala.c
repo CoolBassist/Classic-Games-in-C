@@ -7,7 +7,7 @@ int has_won(int[], int);
 int main(){
     int seeds_per_pit;
     system("clear");
-    printf("Please enter how many seeds you would per pit: ");
+    printf("Please enter how many seeds you would like per pit: ");
     while(!scanf("%d", &seeds_per_pit)){
         printf("Please enter a number. We recommend between 3 and 6\n");
     }
@@ -21,8 +21,8 @@ int main(){
     int player_turn = 0;
     int player_choice;
     int current_pit;
-    int num_of_seeds;
-    system("clear");
+    int seeds_to_sow;
+    //system("clear");
     printf("\n");
 
     while(1){
@@ -37,18 +37,22 @@ int main(){
             current_pit = player_turn? (7+player_choice) : (5-player_choice);
         }while(pits[current_pit] == 0);
 
-        num_of_seeds = pits[current_pit];
+        seeds_to_sow = pits[current_pit];
 
-        pits[current_pit] = 0;
+        pits[current_pit++] = 0; // sets pit that is be sowed to 0, and increments current pit to prepare for sowing.
         
-        for(int i = 0; i < num_of_seeds;){
+        for(int seeds_placed = 0; seeds_placed < seeds_to_sow; current_pit++){
+            current_pit %= 14;
+
             if((current_pit == 6 && player_turn) || (current_pit == 13 && !player_turn)){
                 continue;
             }
 
-            pits[++current_pit%14]++;
-            i++;
+            seeds_placed++;
+            pits[current_pit]++;
         }
+
+        --current_pit; // decrementing current pit since the forloop overshoots by 1.
 
         system("clear");
 
