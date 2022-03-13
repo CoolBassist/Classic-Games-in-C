@@ -57,13 +57,13 @@ int main(){
             continue;
         }else if(pits[current_pit] == 1){
             int steal_pit = 12 - current_pit;
-            if((steal_pit > 6 && steal_pit < 13 && !player_turn) || (steal_pit >= 0 && steal_pit < 6 && player_turn)){
-                if(pits[steal_pit] != 0){
-                    printf("Player %d steals!\n", player_turn + 1);
-                    pits[player_turn? 13 : 6] += pits[steal_pit] + pits[current_pit];
-                    pits[steal_pit] = 0;
-                    pits[current_pit] = 0;
-                }       
+            if(((steal_pit > 6 && steal_pit < 13 && !player_turn) || (steal_pit >= 0 && steal_pit < 6 && player_turn)) && pits[steal_pit] != 0){
+                printf("Player %d steals!\n", player_turn + 1);
+                pits[player_turn? 13 : 6] += pits[steal_pit] + pits[current_pit];
+                pits[steal_pit] = 0;
+                pits[current_pit] = 0;     
+            }else{
+                printf("\n");
             }
         }else{
             printf("\n");
