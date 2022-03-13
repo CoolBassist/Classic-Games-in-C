@@ -54,7 +54,7 @@ int main(){
 
 	draw_board(board);
 
-	printf("Player %c won!\n", player_turn == 0? 'x' : 'o');
+	printf("Player %c won!\n", player_turn? 'o' : 'x');
 
 	return 0;
 }

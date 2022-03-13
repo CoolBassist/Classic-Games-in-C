@@ -21,7 +21,7 @@ int main(){
 	while(1){ //main game loop
 		draw_board(board);
 
-		//take input
+		//take user input
 		while(1){
 			printf("Player %d, please enter coord for move: ", player_turn+1);
 			scanf("%d%d", &x, &y);
