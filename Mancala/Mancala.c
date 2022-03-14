@@ -6,10 +6,12 @@ int has_won(int[], int);
 
 int main(){
     int seeds_per_pit;
+    char c;
     system("clear");
     printf("Please enter how many seeds you would like per pit: ");
     while(!scanf("%d", &seeds_per_pit)){
-        printf("Please enter a number. We recommend between 3 and 6\n");
+        printf("Please enter a number. We recommend between 3 and 6: ");
+        while(c=getchar(), c != EOF && c != '\n'){}
     }
 
     int pits[14];
@@ -32,6 +34,7 @@ int main(){
                 printf("Player %d> ", player_turn + 1);
                 while(!scanf("%d", &player_choice)){
                     printf("Please enter a number between 0 and 5, and a pit that isnt empty.\n");
+                    while(getchar() != EOF){}
                 }
             }while(player_choice > 5 || player_choice < 0);
             current_pit = player_turn? (7+player_choice) : (5-player_choice);
