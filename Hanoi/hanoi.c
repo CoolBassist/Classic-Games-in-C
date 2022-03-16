@@ -159,7 +159,7 @@ void draw_disk(int disk, int disk_above){
         }else if(disk_above == 2){
             printf("   ╭──┴────┴──╮   "); 
         }else if(disk_above == 3){
-            printf("   ╭─┴─────┴─╮   "); 
+            printf("   ╭─┴──────┴─╮   "); 
         }else if(disk_above == 4){
             printf("   ╭┴────────┴╮   "); 
         }else{
@@ -173,7 +173,7 @@ void draw_disk(int disk, int disk_above){
         }else if(disk_above == 3){
             printf("  ╭──┴──────┴──╮  "); 
         }else if(disk_above == 4){
-            printf("  ╭─┴────────┴─   "); 
+            printf("  ╭─┴────────┴─╮  "); 
         }else if(disk_above == 5){
             printf("  ╭┴──────────┴╮  "); 
         }else{
